@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<title>Orden de trabajo</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+	<link href="{% static 'css/fonts.css' %}" type="text/css" rel="stylesheet" />
+	<script src="{% static 'js/formulario.js' %}"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script  src="{% static 'js/menu.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/RTecnicos.css' %}">
+	
+</head>
+<body>
+	<header>
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><span class="icon-menu"></span>Ordenes de Trabajo</a>
+		</div>
+		<nav>
+			<ul>
+				{% if user.is_authenticated  %}	
+					<li><a href="{% url 'pag_index' %}"><span class="icon-home"></span>Inicio</a></li>
+					<li><a href="{% url 'pag_listOrden' %}"><span class="icon-wrench"></span>Ordenes de Trabajo</a></li>
+
+					{% if user.is_superuser  %}
+						<li><a href="{% url 'cliente' %}"><span class="icon-users"></span>Clientes</a></li>
+						<li><a href="{% url 'registrar' %}" ><span class="icon-user-tie"></span>Tecnicos</a></li>				
+					{% else %}
+						<li><a href="" ><span class="icon-users"></span>Clientes</a></li>
+						<li><a href="" ><span class="icon-user-tie"></span>Tecnicos</a></li>
+					{% endif %}
+
+					
+					{% if user.is_authenticated  %}	
+						<h1>Hola {{ user.username }}</h1>
+						<li><a href="{% url 'logOut' %}" class="button-sesion">Cerrar Sesion</a></li>
+					{% else %}
+						<li><a href="{% url 'pag_login' %}" class="button-sesion">Iniciar</a></li>
+						
+					
+					{% endif %}
+
+				{% else %}
+					<li><a href="{% url 'pag_login' %}" class="button-sesion">Iniciar</a></li>
+				{% endif %}
+				
+			</ul>
+		</nav>
+	</header>
+
+	
+	<form  method='POST' action=''  name="formulario">{% csrf_token %}
+		
+				
+				<input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required />
+				
+				<input type="text" id="direccion" name="direccion" placeholder="Direccion"  />
+				<input type="text" id="correo" name="correo" placeholder="Correo electrónico"  />
+				<input type="text" id="telefono" name="telefono" placeholder="Telefono" class="imput-50" />
+				<select name="cosa"  class="imput-50" onchange="cambia()">
+					<option value=0>Seleccione Región
+					<option value=1>I Región de Tarapacá
+					<option value=2>II Región de Antofagasta
+					<option value=3>III Región de Atacama
+					<option value=4>IV Región de Coquimbo
+					<option value=5>V Región de Valparaíso
+					<option value=6>VI Región del Libertador General Bernardo O’Higgins
+					<option value=7>VII Región del Maule
+					<option value=8>VIII Región del Bío-Bío
+					<option value=9>IX Región de La Araucanía
+					<option value=10>X Región de Los Lagos
+					<option value=11>XI Región Aysén del General Carlos Ibáñez del Campo
+					<option value=12>XII Región de Magallanes y Antártica Chilena
+					<option value=13>Región Metropolitana de Santiago
+					<option value=14>XIV Región de Los Ríos
+					<option value=15>XV Región de Arica y Parinacota	
+				</select>
+				<select name="opt" class="imput-50">
+					<option value="-">Seleccione Provincia
+				</select>	
+
+				<select name="tecnico">
+					<option value="" disabled selected>Tecnico encargado</option>
+					{% if formularios %}
+						{% for form in formularios %}	
+							<option>{{ form.nombre}}</option>
+						{% endfor%}
+					{% else %}
+						<option>No hay Tecnicos</option>
+					{% endif %}
+				</select>
+
+				<button type="submit" name="submit" id="boton" onclick="validar()">Guardar</button>
+				
+		
+	</form>
+
+	
+
+</body>
+</html>

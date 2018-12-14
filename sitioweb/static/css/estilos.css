@@ -1,0 +1,220 @@
+  *{ 
+	margin:0;
+	padding:0;
+ }
+
+ body{
+ 	background: #FFFFFA;
+ }
+
+ header {
+ 	width: 100%;
+ 	position: fixed;
+ }
+ /*es la seccion donde esta todos los iconos*/
+ header nav {
+ 	width: 20%;
+ 	left: -100%;
+ 	max-width: 1000px;
+	position: fixed;
+ 	height: 100%;
+ 	background: #1c2728;
+ 	
+ }
+
+ .menu_bar {
+ 	display: block;
+ 	width: 100%;
+	background: #024959;
+
+ }
+ .menu_bar a{
+ 	width: 30%;
+
+ }
+ .menu_bar .bt-menu{
+
+ 	width: 25%;
+ 	display:block;
+ 	padding: 20px;
+ 	color:#fff;
+ 	text-decoration: none;
+ 	font-weight: bold;
+ 	font-size: 25px;
+ 	-webkit-box-sizing:border-box;
+ 	-moz-box-sizing:border-box;
+ 	box-sizing:border-box;
+ }
+ .menu_bar span{
+ 	float: right;
+ 	font-size:40px;
+
+ }
+
+ header nav ul{
+ 	overflow: hidden;
+ 	list-style:none;
+ }
+  
+ /*cada icones*/
+ header nav ul li{
+ 	float: none;
+ 	display:block;
+ 	border-bottom:1px solid rgba(255,255,255, .3);
+ }
+  header nav ul li a{
+  	width: 32%;
+  	color:#fff;
+  	padding:20px;
+  	display: block;
+  	text-decoration: none;
+  }
+  /*Boton Iniciar sesion*/
+ .button-sesion{
+  	display: block;
+  	color: #fff;
+  	text-decoration: none;
+  	padding: 5px 0px;
+  	line-height: normal;
+  	font-size: 20px;
+  	border-radius:20px;
+  	border-radius-color:black;
+  	border:2px solid white; 
+  	text-align: center;
+  	width: 190px;
+  	margin-left: 9%;
+  	margin-top: 10%;
+  	-webkit-transition:500ms ease;
+ 	-moz-transition:500ms ease;
+ 	transition:500ms ease;
+  }
+  header nav a:hover{
+  	background: #f56f3a;
+  	border-radius:50px;
+  }
+  /*icono*/
+  header nav ul li span{
+  	margin-right:10px;
+
+  }
+
+  header nav ul li:hover{
+  	background: #037E8c;
+  }
+  select{
+    margin: 0;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+  }
+  h1{
+    color: white;
+  }
+
+
+  /*tabla*/
+  .wrapper{
+      overflow-x: auto;
+
+      max-width: 1000px;
+      margin: auto;
+      padding-top: 30px;
+  }
+  /*fin tabla*/
+  @media screen and (max-width: 1175px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 28%;
+	 }
+	 header nav {
+	 	width: 23%;
+	 }
+  }
+  @media screen and (max-width: 1059px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 32%;
+	 }
+	 header nav {
+	 	width: 26%;
+	 }
+  }
+  @media screen and (max-width: 935px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 35%;
+	 }
+	 header nav {
+	 	width: 29%;
+	 }
+  }
+  @media screen and (max-width: 845px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 38%;
+	 }
+	 header nav {
+	 	width: 30%;
+	 }
+   .button-sesion{
+       
+        width: 140px;
+        
+    }
+  }
+  @media screen and (max-width: 647px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 40%;
+	 }
+	
+  }
+  @media screen and (max-width: 493px)
+  {
+  	.menu_bar .bt-menu{
+	     	width: 44%;
+	   }
+     .button-sesion{
+       
+        width: 110px;
+        
+    }
+	
+  }
+  @media screen and (max-width: 448px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 48%;
+	 }
+	 header nav {
+	 	width: 38%;
+	 }
+	
+  }
+   @media screen and (max-width: 412px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 55%;
+	 }
+	
+	
+  }
+   @media screen and (max-width: 358px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 60%;
+	 }
+	 header nav {
+	 	width: 42%;
+	 }
+ }
+ @media screen and (max-width: 320px)
+  {
+  	.menu_bar .bt-menu{
+	 	width: 68%;
+	 }
+	 header nav {
+	 	width: 48%;
+	 }
+ }

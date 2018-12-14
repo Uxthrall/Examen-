@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<title>Orden de trabajo</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+	<link href="{% static 'css/login.css' %}" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+		<div class="loginBox">
+			<!-- <img src="user.pgn" class="user"> -->
+			<h2>Login In</h2>
+			<form method="POST">{% csrf_token %}
+				
+				<p>Username</p>
+				<input type="text" name="username" placeholder="Username">
+				<p>Contraseña</p>
+				<input type="password" name="password" placeholder="********">
+				<input type="submit" name="" value="Ingresar">
+
+				 <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+
+			</form>
+		</div>
+</body>
+</html>
